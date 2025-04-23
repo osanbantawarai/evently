@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { assets } from "@/public/assets/assets";
-import { Button } from "../ui/button";
 import NavBar from "./NavBar";
 
 const Header = () => {

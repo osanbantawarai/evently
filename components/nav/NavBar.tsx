@@ -18,7 +18,7 @@ const NavBar = () => {
             className="cursor-pointer "
           />
         </SheetTrigger>
-        <SheetContent className=" flex flex-col gap-6 bg-white md:hidden ">
+        <SheetContent className=" flex flex-col gap-6 bg-white">
           <Image src={assets.logo} alt="logo" width={128} height={38} />
           <Separator className="border border-gray-50" />
           <NavItems />
