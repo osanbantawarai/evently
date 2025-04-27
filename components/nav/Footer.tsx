@@ -6,7 +6,7 @@ import { Button } from '../ui/button'
 
 const Footer = () => {
   return (
-    <div className='flex flex-col ml-10 mr-10 mb-5 justify-between gap-2 items-center sm:flex-row'>
+    <div className='flex flex-col ml-30 mr-20 mb-5 justify-between gap-2 items-center sm:flex-row'>
       <Link href="/">
       <Image src={assets.logo} alt='logo' width={128} height={38}></Image>
       </Link>

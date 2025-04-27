@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const NavBar = () => {
   return (
-    <div className="md:hidden">
+    <div className="sm:hidden">
       <Sheet>
         <SheetTrigger className="align-middle">
           <Image
@@ -15,7 +15,7 @@ const NavBar = () => {
             alt="menu"
             width={24}
             height={24}
-            className="cursor-pointer "
+            className="cursor-pointer mr-5"
           />
         </SheetTrigger>
         <SheetContent className=" flex flex-col gap-6 bg-white">

@@ -11,8 +11,8 @@ const Header = () => {
     { label: "My Profile" },
   ];
   return (
-    <header className="w-full border-b flex justify-between items-center p-5">
-      <div className="pl-10">
+    <header className="sticky bg-white z-50 top-0 w-full border-b flex justify-between items-center pt-3 pb-3 sm:pt-5 sm:pb-5">
+      <div className="pl-10 sm:pl-30">
         <Link href="/">
           <Image src={assets.logo} alt="logo" width={128} height={38} />
         </Link>
