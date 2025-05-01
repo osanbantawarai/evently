@@ -2,19 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { assets } from "@/public/assets/assets";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./NavBar";
 
 const Header = () => {
   const router = useRouter();
-  const [activeButton, setActiveButton] = useState("Home");
+  const pathName = usePathname();
+  const [activeButton, setActiveButton] = useState("");
+
   const navButtons = [
     { label: "Home", path: "/" },
     { label: "Create Event", path: "/events/create" },
     { label: "My Profile", path: "/events/profile" },
   ];
+
+  useEffect(() => {
+    const currentNav = navButtons.find((item) => item.path == pathName);
+    if (currentNav) setActiveButton(currentNav.label), [pathName];
+  });
 
   const handleClick = (label: string, path: string) => {
     setActiveButton(label);
