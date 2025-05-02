@@ -20,6 +20,7 @@ import spinner from "./spinner.svg";
 import test2 from "./test2.png";
 import test from "./test.png";
 import upload from "./upload.svg";
+import time from "./time.png";
 
 export const assets = {
   arrow,
@@ -44,4 +45,5 @@ export const assets = {
   test2,
   test,
   upload,
+  time
 };
