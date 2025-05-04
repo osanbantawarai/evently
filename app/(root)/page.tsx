@@ -17,7 +17,7 @@ const page = () => {
             Book and learn helpful tips from 3,168+ mentors in <br />{" "}
             world-class companies with out global community.
           </p>
-          <Button className="sm:max-w-fit mr-60 sm:mr-0 bg-[#3467e6] hover:bg-[#81a5ff] transition-colors duration-300 pt-5 pb-5 ml-50 sm:ml-0 pl-35 pr-35 sm:pl-8 sm:pr-8 rounded-4xl">
+          <Button className="sm:max-w-fit mr-60 sm:mr-0 bg-[#634CF5] hover:bg-[#7964ff] transition-colors duration-300 pt-5 pb-5 ml-50 sm:ml-0 pl-35 pr-35 sm:pl-8 sm:pr-8 rounded-4xl">
             Explore Now
           </Button>
         </div>
