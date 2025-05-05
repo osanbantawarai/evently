@@ -1,4 +1,4 @@
-import { Schema, models, model, Document } from "mongoose";
+import { Schema, models, model, Document, Mongoose } from "mongoose";
 
 export interface IEevent extends Document {
   _id: string;

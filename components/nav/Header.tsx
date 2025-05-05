@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./NavBar";
 
 const Header = () => {
+  // router helps to navigate between pages like it helps to go to other pagees
   const router = useRouter();
   const pathName = usePathname();
   const [activeButton, setActiveButton] = useState("");

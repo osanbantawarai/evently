@@ -16,6 +16,14 @@ import { Toaster, toast } from "sonner";
 
 const EventForm = () => {
   const [selectImage, setSelectImage] = useState("");
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [price, setPrice] = useState("");
+  const [url, setUrl] = useState("");
 
   const handleSelectImage = (e: any) => {
     const file = e.target.files?.[0];
@@ -25,30 +33,21 @@ const EventForm = () => {
     }
   };
 
-  const handleSubmit = (
-    title: string,
-    category: string,
-    description: string,
-    location: string,
-    startDate: Date,
-    endDate: Date,
-    price: number,
-    url: string
-  ) => {
+  const handleSubmit = () => {
     if (
       !title ||
       !category ||
       !description ||
+      !selectImage ||
       !location ||
       !startDate ||
       !endDate ||
       !price ||
-      !url ||
-      !selectImage
+      !url
     ) {
-      toast.error("Please fill all the fields");
+      toast.error("Please enter all the required fields");
     } else {
-      toast.success("Event created");
+      toast.success("Event created successfully");
     }
   };
 
@@ -61,13 +60,15 @@ const EventForm = () => {
       >
         <div>
           <Input
+            value={title}
+            onChange={(e: any) => setTitle(e.target.value)}
             placeholder="Event title"
             type="text"
             className="rounded-3xl"
           />
         </div>
         <div>
-          <Select>
+          <Select onValueChange={(Value) => setCategory(Value)}>
             <SelectTrigger className="w-full rounded-3xl">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
@@ -83,6 +84,8 @@ const EventForm = () => {
           </Select>
         </div>
         <Textarea
+          value={description}
+          onChange={(e: any) => setDescription(e.target.value)}
           placeholder="Description"
           className=" h-50 sm:h-full rounded-3xl"
         />
@@ -120,6 +123,8 @@ const EventForm = () => {
               className="absolute size-10 pl-4"
             />
             <Input
+              value={location}
+              onChange={(e: any) => setLocation(e.target.value)}
               type="text"
               placeholder="Event location or Online"
               className="relative pl-12 rounded-3xl"
@@ -134,6 +139,8 @@ const EventForm = () => {
           />
           <h2 className="absolute ml-11 ">Start Date:</h2>
           <Input
+            value={startDate}
+            onChange={(e: any) => setStartDate(e.target.value)}
             type="Date"
             className="relative pl-32 flex items-centerc rounded-3xl"
           />
@@ -146,6 +153,8 @@ const EventForm = () => {
           />
           <h2 className="absolute ml-11">End Date:</h2>
           <Input
+            value={endDate}
+            onChange={(e: any) => setEndDate(e.target.value)}
             type="Date"
             className="relative pl-32 flex items-center rounded-3xl"
           />
@@ -157,7 +166,9 @@ const EventForm = () => {
             className="absolute size-10 pl-4"
           />
           <Input
-            type="text"
+            value={price}
+            onChange={(e: any) => setPrice(e.target.value)}
+            type="number"
             placeholder="Price"
             className="relative pl-12 rounded-3xl"
           />
@@ -169,6 +180,8 @@ const EventForm = () => {
             className="absolute size-10 pl-4"
           />
           <Input
+            value={url}
+            onChange={(e: any) => setUrl(e.target.value)}
             type="text"
             placeholder="URL"
             className="relative pl-12 rounded-3xl"
@@ -176,7 +189,10 @@ const EventForm = () => {
         </div>
         <button
           type="submit"
-          onClick={(e) => {e.preventDefault(); handleSubmit}}
+          onClick={(e: any) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
           className=" bg-[#634CF5] hover:bg-[#7964ff] transition-color duration-300 text-white h-10 flex items-center justify-center rounded-4xl cursor-pointer col-span-1 sm:col-span-2 w-full"
         >
           Create Event
